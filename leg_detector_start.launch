@@ -1,0 +1,8 @@
+<launch>
+	<arg name="scan" default="/scan"/>
+	<!--<arg name="machine" default="localhost"/>
+	<arg name="user" default=""/> -->
+	<node pkg="leg_detector" type="leg_detector" name="leg_detector" args="scan:=$(arg scan) $(find leg_detector)/config/trained_leg_detector.yaml" respawn="true" output="screen">
+		<param name="fixed_frame" type="string" value="base_link"/>
+	</node>
+</launch>
