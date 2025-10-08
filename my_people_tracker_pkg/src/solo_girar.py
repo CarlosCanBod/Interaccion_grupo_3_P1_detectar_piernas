@@ -45,7 +45,7 @@ class PersonTurner:
         for person in msg.people:
             if person.reliability > self.reliability_threshold:
                 dist = math.sqrt(person.pos.x**2 + person.pos.y**2)
-		rospy.loginfo("Persona es: {} y la distancia en x {:2f} y en y {:.2f} y la reliability es {:.2f}".format(person.name, person.pos.x, person.pos.y, person.reliability))
+                rospy.loginfo("Persona es: {} y la distancia en x {:2f} y en y {:.2f} y la reliability es {:.2f}".format(person.name, person.pos.x, person.pos.y, person.reliability))
                 if dist < min_dist:
                     min_dist = dist
                     closest_person = person
@@ -79,7 +79,7 @@ class PersonTurner:
                         x = self.target_person.pos.x
                         y = self.target_person.pos.y
 
-			rospy.loginfo("Persona objetivo a girar es: {} y la distancia en x {:2f} y en y {:.2f} y la reliability es {:.2f}".format(self.target_person.name, x, y, self.target_person.reliability))
+                        rospy.loginfo("Persona objetivo a girar es: {} y la distancia en x {:2f} y en y {:.2f} y la reliability es {:.2f}".format(self.target_person.name, x, y, self.target_person.reliability))
                         # Calculamos el ángulo para encarar al objetivo.
                         # atan2 nos da el ángulo en radianes en el plano XY.
                         angle_to_target = math.atan2(y, x)
